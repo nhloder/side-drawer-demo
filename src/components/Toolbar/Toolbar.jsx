@@ -1,5 +1,5 @@
 import React from 'react'
-import DrawerToggleButton from'../Side Drawer/DrawerToggleButton'
+import DrawerToggleButton from '../Side Drawer/DrawerToggleButton'
 
 import './Toolbar.css'
 
@@ -7,7 +7,7 @@ const Toolbar = props => (
   <header className="toolbar">
     <nav className="toolbar__navigation">
       <div />
-      
+      <DrawerToggleButton />
       <div className="toolbar__logo">
         <a href="/">THE LOGO</a>
       </div>
