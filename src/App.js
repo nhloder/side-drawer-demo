@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import Toolbar from "./components/Toolbar/Toolbar";
 import SideDrawer from "./components/Side Drawer/SideDrawer";
 import Backdrop from "./components/Backdrop/Backdrop";
@@ -8,19 +7,28 @@ class App extends Component {
   state = {
     sideDrawerOpen: false
   };
+
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
       return {sideDrawerOpen: !prevState.sideDrawerOpen};
     });
   };
+
+  backdropClickHandler = () => {
+    this.setState({sideDrawerOpen: false})
+  }
+
   render() {
-    let sideDrawer;
-    let backDrop;
+    let backdrop;
+
+    if (this.state.sideDrawerOpen) {
+      backdrop = <Backdrop click ={this.backdropClickHandler} />
+    }
     return (
       <div style={{ height: "100%" }}>
-        <Toolbar />
-        <SideDrawer />
-        <Backdrop />
+        <Toolbar drawerClickHandler = {this.drawerToggleClickHandler} />
+        <SideDrawer show = {this.state.sideDrawerOpen}/>
+        {backdrop}
         <main style={{ marginTop: "56px" }}>
           <p> This is some Page content</p>
         </main>
