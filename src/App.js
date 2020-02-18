@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Toolbar from "./components/Toolbar/Toolbar";
-import SideDrawer from "./components/Side Drawer/SideDrawer";
+import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Backdrop from "./components/Backdrop/Backdrop";
 
 class App extends Component {
